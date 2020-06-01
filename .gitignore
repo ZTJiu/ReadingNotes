@@ -31,3 +31,5 @@
 *.out
 *.app
 */release
+
+.DS_Store
