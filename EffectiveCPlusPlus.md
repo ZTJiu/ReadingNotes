@@ -54,5 +54,30 @@ reference: https://www.modernescpp.com/index.php/thread-safe-initialization-of-d
 ## Item12 复制对象时勿忘其每一个成员
 
 ## Item13 以对象管理资源
+1. 获得资源后立即放入管理对象  
+2. 管理对象运用析构函数确保资源被正确释放  
 
-## 
+## Item14 在资源管理类中小心copying行为 
+1. 复制 RAII 对象必须一并复制它所管理的资源，资源的 copying 行为决定了 RAII 对象的 copying 行为  
+2. 普遍而常见的 RAII 类 copying 行为：抑制 copying 行为，实施引用计数法  
+
+## Item15 在资源管理类中提供访问原始资源的接口
+
+## Item16 成对使用 new 和 delete 时要采用相同的形式
+如果 new 的时候使用了 []，则 delete 的时候也必须使用 []  
+
+## Item17 以独立的语句将 new 的对象放入智能指针
+
+# 第四章
+## Item18 让接口容易被正确使用，不易被误用
+
+## Item19 设计 class 犹如设计 type
+
+## Item20 以 pyss-by-reference-to-const 替换 pass-by-value
+
+## Item21 必须放回对象时，别返回其 reference
+绝不要返回一个指向 local stack 对象的 pointer 或 reference，也不要返回一个指向 heap-allocated 对象的 reference。
+
+## Item22 将成员变量声明为 private
+
+## Item23 
