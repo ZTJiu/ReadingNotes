@@ -1,3 +1,5 @@
+在软件工程中 profiling（program profiling or software profiling，参考 [wikipedia](https://en.wikipedia.org/wiki/Profiling_(computer_programming))）含义如下：
+profiling 是一种动态分析程序内存占用和时间占用的方法。
 # profiling tools
 profiling tools 用来分析代码的执行效率，找出代码中消耗时间最多的部分。
 profiling tools 分为两类：
