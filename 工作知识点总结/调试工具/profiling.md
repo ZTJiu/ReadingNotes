@@ -10,5 +10,11 @@ profiling tools 分为两类：
 
 https://euccas.github.io/blog/20170827/cpu-profiling-tools-on-linux.html
 
+https://www.brendangregg.com/perf.html
+
+https://perf.wiki.kernel.org/index.php/Tutorial
+
+
+
 - time 命令：会显示代码执行的时间： real = user + sys，user = 用户态代码执行时间，sys = 内核态代码执行时间。根据这两个时间，可以判断代你的程序是 CPU-bound 还是 I/O-bound。
 - 
