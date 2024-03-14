@@ -10,6 +10,7 @@ break m4 changequote
 run
 n # next
 s # step in subfunction
+fin # finish to step out current subfunction
 bt # backtrace
 p lquote # print lquote
 l # list 10 lines code
@@ -317,3 +318,50 @@ info program
 ```
 
 ## 5.1 断点，监视点，捕获点
+- 断点：可以让程序在执行到某个点停止下来
+- 监视点：监视点是特殊的断点，在表达式的值改变的时候中断程序
+- 捕获点：捕获点是另一种特殊的断点，用来在某些事件发生的时候中断程序，例如在C++异常或者加载库的时候
+
+### 5.1.1 设置断点
+```shell
+# 给指定的位置设置断点：可以是函数名，行号，或者一个指令的地址
+(gdb) break location
+
+# 不带参数的情况下，会在当前栈里的下一条指令里设置断点
+# 这个在循环里面很好用
+(gdb) break
+
+# 带参数设置断点，在每次断点到达的时候计算 cond 表达式，并且当且仅当表达式的值不为零的时候中断
+(gdb) break location if cond
+
+# 设置一个只中断一次的断点，args 和 break 的含义一致
+(gdb) tbreak args
+
+# 设置一个硬件支持的断点
+(gdb) hbreak args
+
+# 设置一个硬件支持的且只中断一次的断点
+(gdb) thbreak args
+
+# 在所有匹配正则表达 regex 的函数上设置断点
+# 在调试C++程序中很有用，在非特定类成员函数的重载函数设置断点，rbreak 很好用
+(gdb) rbreak regex
+
+# 也可以用 rbreak 在一个程序的所有函数上设置断点
+(gdb) rbreak .
+
+# 打印断点，监视点，捕获点表
+# 可选参数 n 指定打印第几个断点，监视点，捕获点
+info breakpoints [n]
+info break [n]
+info watchpoints
+info catchpoints
+
+# 还有很多跟共享库相关，跟解析断点地址相关的技巧就不再列举了，很少会用到
+
+```
+
+### 5.1.2 设置监视点
+```shell
+
+```
